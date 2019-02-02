@@ -64,8 +64,8 @@ installed first).
 
 ```
 docker pull elasticsearch:5.5.2
-wget https://s3.amazonaws.com/ahalterman-geo/geonames_index.tar.gz --output-file=wget_log.txt
-tar -xzf geonames_index.tar.gz
+wget https://s3.amazonaws.com/ahalterman-geo/geonames_index_2018-06-05.tar.gz --output-file=wget_log.txt
+tar -xzfgeonames_index_2018-06-05.tar.gz
 docker run -d -p 127.0.0.1:9200:9200 -v $(pwd)/geonames_index/:/usr/share/elasticsearch/data elasticsearch:5.5.2
 ```
 
