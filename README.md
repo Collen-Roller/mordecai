@@ -91,6 +91,23 @@ Data
 
 In total, the Geonames database contains 11,741,135 unique coordinates for geolocations.
 
+To extract all data from elasticsearch use curl:
+
+```
+curl -XGET "http://localhost:9200/_search" -H 'Content-Type: application/json' -d'
+{
+    "_source": ["asciiname", "coordinates"],
+    "query": {
+        "type" : {
+            "value" : "geoname"
+        }
+    },
+    "size":11741135
+}' > geonames.json
+```
+
+This will limit you to 10000 objects unless you use a session id. See the jupyter notebook for extracting information from the database using the Python wrapper
+
 Citing
 ------
 
