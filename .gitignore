@@ -5,8 +5,8 @@
 *.bin.gz
 *.tar.bz2
 *data/MITIE-models
-*.ipynb
 .cache
+.ipynb_checkpoints/
 mordecai/.cache
 build/
 dist/
