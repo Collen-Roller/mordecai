@@ -68,12 +68,9 @@ tar -xzf geonames_index.tar.gz
 4. The main point of the fork is to include docker files to utilize elasticsearch and kibana. This is configured within the docker-compose.yml class. Conveniently, in order to download the containers and start them, run the Makefile
 
 ```
-make compose
-=======
-docker pull elasticsearch:5.5.2
 wget https://s3.amazonaws.com/ahalterman-geo/geonames_index_2018-06-05.tar.gz --output-file=wget_log.txt
 tar -xzfgeonames_index_2018-06-05.tar.gz
-docker run -d -p 127.0.0.1:9200:9200 -v $(pwd)/geonames_index/:/usr/share/elasticsearch/data elasticsearch:5.5.2
+make compose
 ```
 
 See the [es-geonames](https://github.com/openeventdata/es-geonames) for the code used
