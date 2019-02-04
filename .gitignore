@@ -11,3 +11,5 @@ mordecai/.cache
 build/
 dist/
 mordecai.egg-info
+geonames_index_2018-06-05.tar.gz
+geonames_index/

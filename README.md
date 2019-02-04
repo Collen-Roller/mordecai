@@ -51,6 +51,8 @@ Installation and Requirements
 pip install mordecai
 ```
 
+However, since this is a fork, the pip module is not configued. Please run the code locally.
+
 2. You should then download the required spaCy NLP model:
 
 ```
@@ -59,14 +61,16 @@ python -m spacy download en_core_web_lg
 
 3. In order to work, Mordecai needs access to a Geonames gazetteer running in
 Elasticsearch. The easiest way to set it up is by running the following
-commands (you must have [Docker](https://docs.docker.com/engine/installation/)
-installed first).
 
 ```
-docker pull elasticsearch:5.5.2
 wget https://s3.amazonaws.com/ahalterman-geo/geonames_index.tar.gz --output-file=wget_log.txt
 tar -xzf geonames_index.tar.gz
-docker run -d -p 127.0.0.1:9200:9200 -v $(pwd)/geonames_index/:/usr/share/elasticsearch/data elasticsearch:5.5.2
+```
+
+4. The main point of the fork is to include docker files to utilize elasticsearch and kibana. This is configured within the docker-compose.yml class. Conveniently, in order to download the containers and start them, run the Makefile
+
+```
+make compose
 ```
 
 See the [es-geonames](https://github.com/openeventdata/es-geonames) for the code used
@@ -74,6 +78,18 @@ to produce this index.
 
 To update the index, simply shut down the old container, re-download the index
 from s3, and restart the container with the new index.
+
+
+Ports
+-----
+- http://localhost:5601 : Kibana Dashboard
+- http://localhost:9200 : Elastic Search (OOS)
+- http://localhost:9600 : Logstash
+
+Data
+----
+
+In total, the Geonames database contains 11,741,135 unique coordinates for geolocations.
 
 Citing
 ------

@@ -1,4 +1,0 @@
-# convert docstrings to restructured text
-sphinx-apidoc -f -o source/ ../mordecai
-# build the docs
-make html
