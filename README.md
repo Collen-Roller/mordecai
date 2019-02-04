@@ -1,8 +1,6 @@
-![](paper/mordecai_geoparsing.png)
+# Mordecai
 
-Full text geoparsing as a Python library. Extract the place names from a piece of
-text, resolve them to the correct place, and return their coordinates and
-structured geographic information.
+This is a forked version of a full text geoparsing as a Python library (https://github.com/openeventdata/mordecai). Extract the place names from a piece of text, resolve them to the correct place, and return their coordinates and structured geographic information. The forked version containers docker files which are to use kibana and elastic search over the dataset. Eventually, there will be scripts to update the database with other locations and retrain the inferencing model to improve performance.
 
 Example usage
 -------------
