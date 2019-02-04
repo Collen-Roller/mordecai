@@ -63,7 +63,6 @@ python -m spacy download en_core_web_lg
 Elasticsearch. The easiest way to set it up is by running the following
 
 ```
-<<<<<<< HEAD
 wget https://s3.amazonaws.com/ahalterman-geo/geonames_index.tar.gz --output-file=wget_log.txt
 tar -xzf geonames_index.tar.gz
 ```
@@ -77,7 +76,6 @@ docker pull elasticsearch:5.5.2
 wget https://s3.amazonaws.com/ahalterman-geo/geonames_index_2018-06-05.tar.gz --output-file=wget_log.txt
 tar -xzfgeonames_index_2018-06-05.tar.gz
 docker run -d -p 127.0.0.1:9200:9200 -v $(pwd)/geonames_index/:/usr/share/elasticsearch/data elasticsearch:5.5.2
->>>>>>> 7584bb275ff03d29e58c7f512072851e2f7be4f7
 ```
 
 See the [es-geonames](https://github.com/openeventdata/es-geonames) for the code used
