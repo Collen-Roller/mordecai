@@ -128,7 +128,7 @@ In order to evaluate location parsing, we run a series of test with a subset of 
 Here are the results
 
 <p align="center">
-  <img src="/images/Mordecai Location Extraction Results.png" width="350" title="Extraction Results">
+  <img src="/images/Mordecai Location Extraction Results.png" title="Extraction Results">
 </p>
 
 
