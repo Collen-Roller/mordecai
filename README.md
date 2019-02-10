@@ -108,6 +108,30 @@ curl -XGET "http://localhost:9200/_search" -H 'Content-Type: application/json' -
 
 This will limit you to 10000 objects unless you use a session id. See the jupyter notebook for extracting information from the database using the Python wrapper
 
+Moredecai builds on top of these 11.7 million locations.
+
+Evaluation
+------
+In order to evaluate location parsing, we run a series of test with a subset of 52k queries. The dimensions we focus on are case and context. The table below describes each extraction technique
+
+- Individual (Lowercase with No Context) ex: new york
+- Individual (Lowercase with Minimal Context) ex: where is new york
+- World Locations List (Lowercase with No Context) ex: rome, new york, united states
+- World Location List (Lowercase with Context) ex: where is rome, new york, united states
+- Individual (Uppercase with No Context) ex: New York
+- Individual (Uppercase with Context) ex: where is New York
+- Individual (Uppercase with Random Context): random query from sample set of 20 different queries
+- World Locations List (Uppercase with No Context) ex: Rome, New York, United States
+- World Locations List  (Uppercase with Context) ex: Where is Rome, New York, United States?
+- World Location List (Uppercase with Random Context): random query from sample set of 20 different queries
+
+Here are the results
+
+<p align="center">
+  <img src="/images/Mordecai Location Extraction Results.png" title="Extraction Results">
+</p>
+
+
 Citing
 ------
 
